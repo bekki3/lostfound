@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Lost</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+    <body id="lostPage" onload="resetSelection()">
+        <form action="/lost" class="text-center" method="post">
+            <h1 class="h3 mb-3 fw-normal text-center">Where you lost?</h1>
+
+            <select id="regionSelect" class="foundSelect text-center m-1" name="region"  onchange="makeSubmenu(this.value)" required>
+                <option value="" disabled selected>Choose Region</option>
+                <option>Andijan</option>
+                <option>Bukhara</option>
+                <option>Djizzak</option>
+                <option>Fergana</option>
+                <option>Kashkadarya</option>
+                <option>Khorezm</option>
+                <option>Namangan</option>
+                <option>Navoi</option>
+                <option>Samarkand</option>
+                <option>Surkhandarya</option>
+                <option>Syrdarya</option>
+                <option>Tashkent</option>
+                <option>TashkentCity</option>
+                <option>Karakalpakistan</option>
+            </select><br>
+            <select name="city" class="m-1 foundSelect text-center" id="citySelect" size="1" required>
+                <option value="" disabled selected>Choose City</option>
+                <option></option>
+            </select><br>
+            <select name="category" class="m-1 foundSelect text-center" id="categorySelect" size="1" required>
+                <option value="" disabled selected>Choose Category</option>
+                <option></option>
+            </select><br>
+            <a href="/">Home</a>
+            <button class="my-3 btn btn-dark btn-outline-primary" style="color: rgb(208, 208, 255);" type="submit">Search items</button>
+        </form>
+        
+<hr>
+    <div class="container text-center">
+		<% items.forEach(function(image) { %>
+		
+			<div class="innerContainer">
+				<img src="data:image/<%=image.img.contentType%>;base64,
+					<%=image.img.data.toString('base64')%>">
+				<div class="imgInfo">
+                    <p class="desParagraph">
+                        <%= image.region %> <br>
+                        <%= image.city %> <br>
+                        <%= image.category %> <br>
+                        <%= image.comment %> <br>
+                    </p>
+                    <div class="trashEditForm">
+                        <%= image.phone %>
+                    </div>
+					<!-- <form class="trashEditForm" action="/delete" method="post">
+						 
+					<button class="btn" type="submit" name= "btn" value="<%= image._id %>"><i class="fa fa-trash-o"></i></button>
+					<button onclick="editFunction('<%= image._id %>')" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></i></button>
+	
+						
+					</form> -->
+				</div>
+			</div>
+		
+		<% }) %>
+	</div>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <script src="index.js"></script>
+</body>
+</html>
