@@ -239,12 +239,17 @@ body {
 
 
   #foundPage{
-    background-color: #fefefe;
+    background-color: #111;
+    color: #eee;
   }
 
 
 .foundMain{
   max-width: 1000px;
+}
+.foundMain select{
+  background-color: #111;
+  color: #eee;
 }
   .form-signin {
     max-width: 330px;
@@ -265,18 +270,15 @@ body {
     width: 60%;
   }
   #comment{
+    background-color: #111;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
   #phone{
+    background-color: #111;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 
-  }
-  input[type="file"]{
-    outline: 0;
-    border-radius: 5px;
-    margin: 10px;
   }
 .foundMain a{
   text-decoration: none;
