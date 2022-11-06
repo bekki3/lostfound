@@ -270,11 +270,13 @@ body {
     width: 60%;
   }
   #comment{
+    color: white;
     background-color: #111;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
   #phone{
+    color: white;
     background-color: #111;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
