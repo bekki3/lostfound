@@ -56,9 +56,15 @@
                         <%= image.category %> <br>
                         <%= image.comment %> <br>
                     </p>
-                    <div class="trashEditForm">
-                        <%= image.phone %>
+                    <div class="trashEditForm" id="phone" onclick="showPhoneNumber()">
+                        Click to see phone number
                     </div>
+                    
+                    <script>
+                    function showPhoneNumber() {
+                        document.getElementById('phone').innerText = '<%= image.phone %>';
+                    }
+                    </script>
 					<!-- <form class="trashEditForm" action="/delete" method="post">
 						 
 					<button class="btn" type="submit" name= "btn" value="<%= image._id %>"><i class="fa fa-trash-o"></i></button>
